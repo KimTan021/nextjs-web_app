@@ -16,19 +16,19 @@ export function UserComponent({currentUser}: Props) {
             if (response) {
                 notify('We have sent you an email. Please check your inbox')
             }else {
-                notify('Something went wrong.')
+                notify('There is an error.')
             }
         }
     }
 
     return (
-        <div className="bg-white h-screen w-screen">
+        <div className="bg-black h-screen w-screen">
             <div className='flex flex-col justify-center items-center px-12 gap-y-12 pt-40'>
-                <h2 className="mt-20 text-3xl text-center font-bold text-gray-800">Hello 👋</h2>
+                <h2 className="mt-20 text-3xl text-center font-bold text-white">You Log-In Successfully</h2>
                 {
                     currentUser && currentUser.emailVerified && !verifyIfUserIsEnrolled(currentUser) &&
                     <Link className='hover:text-black underline text-center w-full' href='/mfa'>
-                        Activate the multifactor authentication
+                        Click here to activate your MFA
                     </Link>
                 }
                 {
@@ -36,14 +36,14 @@ export function UserComponent({currentUser}: Props) {
                     <button
                         onClick={sendEmail}
                         className={'hover:text-black underline text-center w-full'}>
-                        Verify your email
+                        Click here to verify your email address
                     </button>
                 }
                 <button
                     onClick={logout}
-                    className="bg-black rounded-xl flex h-11 items-center justify-center px-6">
-                <span className="relative text-base font-light text-white">
-                    Disconnect
+                    className="bg-blue-500 rounded-xl flex h-12 items-center justify-center px-11">
+                <span className="relative text-xl font-black text-white">
+                    Logout
                 </span>
                 </button>
             </div>

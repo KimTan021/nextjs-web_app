@@ -22,7 +22,7 @@ export function CodeSignup({currentUser, verificationCodeId}: Props) {
         if (response) {
             await router.push('/user')
         }else {
-            notify('Something went wrong.')
+            notify('There is an error.')
         }
     }
 

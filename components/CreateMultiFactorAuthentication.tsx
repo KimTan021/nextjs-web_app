@@ -26,7 +26,7 @@ export function CreateMultiFactorAuthentication({currentUser}: Props) {
         );
 
         if (!verificationId) {
-            notify('Something went wrong.');
+            notify('There is an error.');
         }else {
             setVerificationCodeId(verificationId);
         }

@@ -24,7 +24,7 @@ export function CodeSignIn({verificationId, resolver}: Props) {
         if (response) {
             await router.push('/user');
         }else {
-            notify('Something went wrong.');
+            notify('There is an error.');
         }
     }
     return (

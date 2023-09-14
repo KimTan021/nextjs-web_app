@@ -1,4 +1,4 @@
-import {Chat} from "phosphor-react";
+import {Chat, Hash} from "phosphor-react";
 import {useRouter} from "next/router";
 import {useRef} from "react";
 
@@ -18,14 +18,14 @@ export function PhoneRegistration({getPhoneNumber}: Props) {
 
     return (
         <div className='flex sm:justify-center items-center px-4 sm:px-0'>
-            <div className="bg-white flex flex-col p-5 md:p-6  border-2 shadow-md shadow-gray-100/10  border-palladium rounded-xl w-full sm:max-w-[440px]">
+            <div className="bg-gray-800 flex flex-col p-5 md:p-6  border-2 shadow-md shadow-gray-100/10  border-palladium rounded-xl w-full sm:max-w-[440px]">
                 <div className="flex flex-col justify-between">
-                    <h1 className='font-medium text-[22px] leading-[130%] md:mr-8'>Provide your phone</h1>
-                    <p className='text-slate-500 mt-2 text-base'>Fill in your phone number to receive the code</p>
+                    <h1 className='font-bold text-[22px] leading-[130%] md:mr-8 text-center text-white'>Provide your Phone Number</h1>
+                    <p className='mt-2 text-base text-white pt-7'>Fill in your phone number to receive the code</p>
                 </div>
                 <div className="space-y-4 my-6">
                     <div className="relative flex items-center">
-                        <Chat weight='fill' className='w-6 h-6 absolute left-4 inset-y-0 my-auto'/>
+                        <Hash weight='fill' className='w-6 h-6 absolute left-4 inset-y-0 my-auto'/>
                         <input
                             ref={phoneNumber}
                             type="text"
@@ -39,12 +39,12 @@ export function PhoneRegistration({getPhoneNumber}: Props) {
                 <div className="flex justify-between mt-4 gap-x-4">
                     <button
                         onClick={() => void router.push('/user')}
-                        className='rounded-xl flex gap-x-4 mb-8 text-black h-11 w-1/2 items-center justify-center px-6 border border-gray-500'>Cancel</button>
+                        className='rounded-xl flex gap-x-4 mb-8 text-black h-11 w-1/2 items-center justify-center px-6 border border-gray-500 bg-white font-bold'>Cancel</button>
                     <button
                         onClick={handleClick}
-                        className="bg-black rounded-xl flex h-11 w-1/2 items-center justify-center px-6">
+                        className="bg-blue-500 rounded-xl flex h-11 w-1/2 items-center justify-center px-6">
                         <span
-                            className="text-base font-light text-white">
+                            className="text-base font-bold text-white">
                             Send SMS
                         </span>
                     </button>
